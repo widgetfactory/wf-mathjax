@@ -9,7 +9,7 @@
   <copyright>@@copyright@@</copyright>
   <license>@@licence@@</license>
   <description>PLG_SYSTEM_WF_MATHJAX_XML_DESCRIPTION</description>
-  <files folder="plugins/system/jce">
+  <files folder="plugins/system/wf_mathjax">
     <file plugin="wf_mathjax">wf_mathjax.php</file>
   </files>
   <languages folder="administrator/language/en-GB">
