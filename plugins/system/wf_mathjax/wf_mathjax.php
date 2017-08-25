@@ -17,19 +17,19 @@ defined('JPATH_BASE') or die;
  * @subpackage  System.jce
  * @since       2.5.5
  */
-class PlgSystemMathJax extends JPlugin
+class PlgSystemWf_Mathjax extends JPlugin
 {
 	public function onAfterRoute()
 	{
 		$app = JFactory::getApplication();
 
-        if ($app->isAdmin()) {
-            return;
-        }
+		if ($app->isAdmin()) {
+		    return;
+		}
 		
-		$document 	= JFactory::getDocument();
+		$document = JFactory::getDocument();
 		
-		$options 	= $this->params->get('math_jax_options', 'TeX,MML,AM_CHTML');
+		$options = $this->params->get('math_jax_options', 'TeX,MML,AM_CHTML');
 		
 		$document->addScript('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=' . str_replace(',', '-', $options));
 		
