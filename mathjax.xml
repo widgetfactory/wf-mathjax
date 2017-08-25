@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="system" method="upgrade">
+  <name>plg_system_mathjax</name>
+  <version>@@version@@</version>
+  <creationDate>@@date@@</creationDate>
+  <author>Ryan Demmer</author>
+  <authorEmail>@@email@@</authorEmail>
+  <authorUrl>http://www.joomlacontenteditor.net</authorUrl>
+  <copyright>@@copyright@@</copyright>
+  <license>@@licence@@</license>
+  <description>PLG_SYSTEM_MATHJAX_XML_DESCRIPTION</description>
+  <files folder="plugins/system/jce">
+    <file plugin="mathjax">mathjax.php</file>
+    <folder>js</folder>
+  </files>
+  <languages folder="administrator/language/en-GB">
+      <language tag="en-GB">en-GB.plg_system_mathjax.ini</language>
+      <language tag="en-GB">en-GB.plg_system_mathjax.sys.ini</language>
+  </languages>
+</extension>
