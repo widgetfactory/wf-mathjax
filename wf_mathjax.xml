@@ -20,7 +20,7 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="mathjax_options" type="text" label="PLG_WF_MATHJAX_OPTIONS_LABEL" description="PLG_WF_MATHJAX_OPTIONS_DESCRIPTION" default="TeX,MML,AM_CHTML" />
-				<field name="mathjax_delimeter" type="text" label="PLG_WF_MATHJAX_DELIMETER_LABEL" description="PLG_WF_MATHJAX_DELIMETER_DESCRIPTION" default="$ $" />
+				<field name="mathjax_delimiter" type="text" label="PLG_WF_MATHJAX_DELIMITER_LABEL" description="PLG_WF_MATHJAX_DELIMITER_DESCRIPTION" default="$ $" />
 			</fieldset>
 		</fields>
 	</config>
