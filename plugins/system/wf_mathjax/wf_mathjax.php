@@ -28,8 +28,8 @@ class PlgSystemWf_Mathjax extends JPlugin
 		
 		$document = JFactory::getDocument();
 		
-		$options 	= $this->params->get('math_jax_options', 'TeX,MML,AM_CHTML');
-		$delim 		= $this->params->get('math_jax_delim', '$ $');
+		$options 	= $this->params->get('mathjax_options', 'TeX,MML,AM_CHTML');
+		$delim 		= $this->params->get('mathjax_delimeter', '$ $');
 		
 		// array of inline delimiter options
 		$delim = explode(',', $delim);
