@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="1.6" type="plugin" group="system" method="upgrade">
   <name>plg_system_wf_mathjax</name>
-  <version>@@version@@</version>
-  <creationDate>@@date@@</creationDate>
+  <version>1.0</version>
+  <creationDate>August 2018</creationDate>
   <author>Ryan Demmer</author>
-  <authorEmail>@@email@@</authorEmail>
+  <authorEmail>ryan@widgetfactorylimited.co.uk</authorEmail>
   <authorUrl>https://www.widgetfactorylimited.co.uk</authorUrl>
-  <copyright>@@copyright@@</copyright>
-  <license>@@licence@@</license>
+  <copyright>Copyright (C) 2006 - 2018 Ryan Demmer. All rights reserved</copyright>
+  <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
   <description>PLG_SYSTEM_WF_MATHJAX_XML_DESCRIPTION</description>
   <files folder="plugins/system/wf_mathjax">
     <file plugin="wf_mathjax">wf_mathjax.php</file>
@@ -16,4 +16,26 @@
       <language tag="en-GB">en-GB.plg_system_wf_mathjax.ini</language>
       <language tag="en-GB">en-GB.plg_system_wf_mathjax.sys.ini</language>
   </languages>
+  
+  <config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="mathjax_options"
+					type="text"
+					label="PLG_WF_MATHJAX_OPTIONS_LABEL"
+					description="PLG_WF_MATHJAX_OPTIONS_DESCRIPTION"
+					default="TeX,MML,AM_CHTML"
+				/>
+				<field
+					name="mathjax_delimeter"
+					type="text"
+					label="PLG_WF_MATHJAX_DELIMETER_LABEL"
+					description="PLG_WF_MATHJAX_DELIMETER_DESCRIPTION"
+					default="$ $"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+  
 </extension>
