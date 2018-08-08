@@ -29,12 +29,12 @@ class PlgSystemWf_Mathjax extends JPlugin
 		$document = JFactory::getDocument();
 		
 		$options 	= $this->params->get('mathjax_options', 'TeX,MML,AM_CHTML');
-		$delim 		= $this->params->get('mathjax_delimeter', '$ $');
+		$delim 		= $this->params->get('mathjax_delimiter', '$ $');
 		
 		// array of inline delimiter options
 		$delim = explode(',', $delim);
 		
-		// process individual delimeters
+		// process individual delimiters
 		array_walk($delim, function(&$item) {
 			$item = explode(' ', trim($item));
 		});
