@@ -1,11 +1,10 @@
 <?php
 
 /**
- * @package     JCE
- * @subpackage  System.jce
+ * @package     MathJax
+ * @subpackage  System.wf_mathjax
  *
- * @copyright   Copyright (C) 2015 Ryan Demmer. All rights reserved.
- * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2018 Ryan Demmer. All rights reserved.
  * @license     GNU General Public License version 2 or later
  */
 defined('JPATH_BASE') or die;
@@ -29,11 +28,26 @@ class PlgSystemWf_Mathjax extends JPlugin
 		
 		$document = JFactory::getDocument();
 		
-		$options = $this->params->get('math_jax_options', 'TeX,MML,AM_CHTML');
+		$options 	= $this->params->get('math_jax_options', 'TeX,MML,AM_CHTML');
+		$delim 		= $this->params->get('math_jax_delim', '$ $');
 		
-		$document->addScript('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=' . str_replace(',', '-', $options));
+		// array of inline delimiter options
+		$delim = explode(',', $delim);
 		
-		$config = "MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});";
+		// process individual delimeters
+		array_walk($delim, function(&$item) {
+			$item = explode(' ', trim($item));
+		});
+		
+		$document->addScript('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=' . str_replace(',', '-', $options));
+		
+		$data = array(
+			'tex2jax' => array(
+				'inlineMath' => $delim
+			)
+		);
+		
+		$config = "MathJax.Hub.Config(" . json_encode($data) . ");";
 		
 		$document->addScriptDeclaration($config, 'text/x-mathjax-config');
 	}
